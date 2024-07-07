@@ -1,0 +1,1 @@
+[22-Feb-2024 21:38:24 UTC] PHP Fatal error:  Declaration of App\Http\Middleware\TrialExpirationCheck::handle($request, Closure $next) must be compatible with Illuminate\Auth\Middleware\Authenticate::handle($request, Closure $next, ...$guards) in /home2/getbulv6/app.getbusinessplanner.com/app/Http/Middleware/TrialExpirationCheck.php on line 11
