@@ -12,7 +12,8 @@
     <div class="card">
         <div class="card-body">
             <h4 class="fw-bolder">{{$plan->name}}</h4>
-            <img src="{{PUBLIC_DIR}}/img/Banner.jpg" width="100%" height="100%" alt="">
+            {{-- <img src="{{PUBLIC_DIR}}/img/Banner.jpg" width="100%" height="100%" alt=""> --}}
+            <img src="{{ asset('img/Banner.jpg') }}" width="100%" height="100%" alt="">
             <div class="text-purple mb-3">{!! $plan->description !!}</div>
 
             @if ($errors->any())

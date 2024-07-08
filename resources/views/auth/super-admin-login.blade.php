@@ -9,9 +9,11 @@
     </title>
     @if(!empty($super_settings['favicon']))
 
-        <link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}">
+        {{-- <link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}"> --}}
+        <link rel="icon" type="image/png" href="{{ asset('uploads/' . $super_settings['favicon']) }}">
     @endif
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css') }}" rel="stylesheet"/>
     @if(!empty($super_settings['config_recaptcha_in_admin_login']))
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     @endif

@@ -9,7 +9,8 @@
         {{config('app.name')}}
     </title>
 
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=1128" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=1128" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css?v=1128') }}" rel="stylesheet"/>
 
 
     @yield('head')
@@ -25,7 +26,8 @@
            aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="{{config('app.url')}}/dashboard">
             @if(!empty($super_settings['logo']))
-                <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" alt="...">
+                {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" alt="..."> --}}
+                <img src="{{ asset('uploads/' . $super_settings['logo']) }}" class="navbar-brand-img h-100" alt="...">
             @else
                 <span class="ms-1 font-weight-bold"> {{config('app.name')}}</span>
             @endif
@@ -34,7 +36,8 @@
     <div class=" text-center">
         @if(!empty($user->photo))
             <a href="javascript:" class="avatar avatar-md rounded-circle border border-secondary">
-                <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$user->photo}}">
+                {{-- <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$user->photo}}"> --}}
+                <img alt="" class="p-1" src="{{ asset('uploads/' . $user->photo) }}">
             </a>
         @else
             <div class="avatar avatar-md  rounded-circle bg-purple-light  border-radius-md p-2">
@@ -434,8 +437,10 @@
     </div>
 </main>
 <!--   Core JS Files   -->
-<script src="{{PUBLIC_DIR}}/js/app.js?v=99"></script>
-<script src="{{PUBLIC_DIR}}/lib/tinymce/tinymce.min.js?v=58"></script>
+{{-- <script src="{{PUBLIC_DIR}}/js/app.js?v=99"></script>
+<script src="{{PUBLIC_DIR}}/lib/tinymce/tinymce.min.js?v=58"></script> --}}
+<script src="{{ asset('js/app.js?v=99') }}"></script>
+<script src="{{ asset('lib/tinymce/tinymce.min.js?v=58') }}"></script>
 <script>
     (function(){
         "use strict";

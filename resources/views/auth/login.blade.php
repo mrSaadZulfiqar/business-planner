@@ -8,9 +8,12 @@
 </title>
 @if(!empty($super_settings['favicon']))
 
-<link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}">
+{{-- <link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}"> --}}
+<link rel="icon" type="image/png" href="{{ asset('uploads/' . $super_settings['favicon']) }}">
+
 @endif
-<link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/>
+{{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/> --}}
+<link id="pagestyle" href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 
 @if(!empty($super_settings['config_recaptcha_in_user_login']))
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -25,7 +28,9 @@
 
     <a class="navbar-brand text-dark bg-transparent fw-bolder" href="/" rel="tooltip" title="" data-placement="bottom">
         @if(!empty($super_settings['logo']))
-            <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="...">
+            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="..."> --}}
+            <img src="{{ asset('uploads/' . $super_settings['logo']) }}" class="navbar-brand-img h-100" style="max-height: {{ $super_settings['frontend_logo_max_height'] ?? '30' }}px;" alt="...">
+
         @else
             <span class=" font-weight-bold">{{config('app.name')}}</span>
         @endif

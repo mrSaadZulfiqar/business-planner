@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 </head>
 <body class="bg-pink-light">
 @if(($super_settings['landingpage'] ?? null) === 'Default')
@@ -12,7 +13,8 @@
 
             <a class="navbar-brand text-dark bg-transparent fw-bolder" href="/" rel="tooltip" title="" data-placement="bottom">
                 @if(!empty($super_settings['logo']))
-                    <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="...">
+                    {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="..."> --}}
+                    {{-- // to be done later --}}
                 @else
                     <span class=" font-weight-bold">{{config('app.name')}}</span>
                 @endif

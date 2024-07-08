@@ -7,7 +7,8 @@
 
     @if(!empty($super_settings['favicon']))
 
-        <link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}">
+        {{-- <link rel="icon" type="image/png" href="{{PUBLIC_DIR}}/uploads/{{$super_settings['favicon']}}"> --}}
+        <link rel="icon" type="image/png" href="{{ asset('uploads/' . $super_settings['favicon']) }}">
     @endif
 
 
@@ -15,7 +16,8 @@
         @yield('title')-{{config('app.name')}}
     </title>
 
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=2" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=2" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css?v=2') }}" rel="stylesheet"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     @if(!empty($super_settings['meta_description']))
 
@@ -37,7 +39,8 @@
 
         <a class="navbar-brand text-dark bg-transparent fw-bolder" href="/" rel="tooltip" title="" data-placement="bottom">
             @if(!empty($super_settings['logo']))
-                <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="...">
+                {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$super_settings['logo']}}" class="navbar-brand-img h-100" style="max-height: {{$super_settings['frontend_logo_max_height'] ?? '30'}}px;" alt="..."> --}}
+                <img src="{{ asset('uploads/' . $super_settings['logo']) }}" class="navbar-brand-img h-100" style="max-height: {{ $super_settings['frontend_logo_max_height'] ?? '30' }}px;" alt="...">
             @else
                 <span class=" font-weight-bold">{{config('app.name')}}</span>
             @endif
@@ -205,7 +208,8 @@
 </footer>
 
 
-<script src="{{PUBLIC_DIR}}/js/app.js?v=93"></script>
+{{-- <script src="{{PUBLIC_DIR}}/js/app.js?v=93"></script> --}}
+<script src="{{ asset('js/app.js?v=93') }}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>

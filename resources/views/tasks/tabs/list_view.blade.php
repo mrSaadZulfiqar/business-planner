@@ -35,7 +35,8 @@
                                 @if(!empty($users[$task->contact_id]->photo))
                                     <a href="javascript:" class="avatar avatar-sm rounded-circle"
                                        data-bs-toggle="tooltip" data-bs-placement="bottom"  title="{{$users[$task->contact_id]->first_name}}">
-                                        <img src="{{PUBLIC_DIR}}/uploads/{{$users[$task->contact_id]->photo}}">
+                                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$users[$task->contact_id]->photo}}"> --}}
+                                        <img src="{{ asset('uploads/' . $users[$task->contact_id]->photo) }}">
                                     </a>
 
                                 @else

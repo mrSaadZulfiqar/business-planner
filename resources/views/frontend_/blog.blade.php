@@ -14,8 +14,11 @@
                                 <div class="card-header p-0 mx-lg-3 mt-3 position-relative z-index-1">
                                     <a href="" class="d-block">
                                         @if(!empty($blog->cover_photo))
-                                            <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="img-fluid border-radius-md"> @else
-                                            <img src="{{PUBLIC_DIR}}/img/placeholder.jpeg" class="img-fluid border-radius-lg">
+                                            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="img-fluid border-radius-md">  --}}
+                                            <img src="{{ asset('uploads/' . $blog->cover_photo) }}" class="img-fluid border-radius-md"> 
+                                            @else
+                                            {{-- <img src="{{PUBLIC_DIR}}/img/placeholder.jpeg" class="img-fluid border-radius-lg"> --}}
+                                            <img src="{{ asset('img/placeholder.jpeg') }}" class="img-fluid border-radius-lg">
                                         @endif
                                     </a>
                                 </div>

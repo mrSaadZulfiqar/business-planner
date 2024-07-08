@@ -17,7 +17,8 @@
                     <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                         <a href="javascript:" class="d-block">
                             @if(!empty($blog->cover_photo))
-                                <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="img-fluid border-radius-lg">
+                                {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="img-fluid border-radius-lg"> --}}
+                                <img src="{{ asset('uploads/' . $blog->cover_photo) }}" class="img-fluid border-radius-lg">
 
                             @endif
 

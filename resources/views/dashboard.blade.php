@@ -227,7 +227,8 @@
                                                 <div>
                                                     @if(!empty($users[$recent_note->admin_id]->photo))
                                                         <a href="javascript:" class=" mt-2 avatar avatar-sm border border-secondary">
-                                                            <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$recent_note->admin_id]->photo}}">
+                                                            {{-- <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$recent_note->admin_id]->photo}}"> --}}
+                                                            <img alt="" class="p-1" src="{{ asset('uploads/' . $users[$recent_note->admin_id]->photo) }}">
                                                         </a>
                                                     @else
                                                         @if(!empty($users[$recent_note->admin_id]))
@@ -270,7 +271,9 @@
                             <div class="col-md-6 ms-auto text-center mt-6 mt-lg-0">
                                 <div class="">
                                     @if(!empty($recent_note->cover_photo))
-                                        <img src="{{PUBLIC_DIR}}/uploads/{{$recent_note->cover_photo}}"
+                                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$recent_note->cover_photo}}"
+                                             class="img-fluid border-radius-lg" alt=""> --}}
+                                        <img src="{{ asset('uploads/' . $recent_note->cover_photo) }}"
                                              class="img-fluid border-radius-lg" alt="">
                                     @endif
                                     <div class="position-relative d-flex align-items-center justify-content-center h-100"> <img class="w-100 position-relative z-index-2 pt-4" src="" alt="">
@@ -325,7 +328,8 @@
                                                             </div>
                                                         @else
 
-                                                            <img src="{{PUBLIC_DIR}}/uploads/{{$staff->photo}}" alt="" class="avatar avatar-md shadow-sm">
+                                                            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$staff->photo}}" alt="" class="avatar avatar-md shadow-sm"> --}}
+                                                            <img src="{{ asset('uploads/' . $staff->photo) }}" alt="" class="avatar avatar-md shadow-sm">
                                                         @endif
                                                     </div>
                                                     <div class="d-flex flex-column justify-content-center px-3">
@@ -485,7 +489,8 @@
                                                         @if(!empty($users[$member]->photo))
                                                             <a href="javascript:" class="avatar avatar-sm rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                                title="{{$users[$member]->first_name}}">
-                                                                <img src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}" alt="team1">
+                                                                {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}" alt="team1"> --}}
+                                                                <img src="{{ asset('uploads/' . $users[$member]->photo) }}" alt="team1">
                                                             </a>
                                                         @else
                                                             @php
@@ -610,7 +615,8 @@
                                                     @if(!empty($users[$todo->contact_id]->photo))
                                                         <a href="javascript:" class="avatar avatar-sm rounded-circle"
                                                            data-bs-toggle="tooltip" data-bs-placement="bottom"  title="{{$users[$todo->contact_id]->first_name}}">
-                                                            <img src="{{PUBLIC_DIR}}/uploads/{{$users[$todo->contact_id]->photo}}">
+                                                            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$users[$todo->contact_id]->photo}}"> --}}
+                                                            <img src="{{ asset('uploads/' . $users[$todo->contact_id]->photo) }}">
                                                         </a>
 
                                                     @else

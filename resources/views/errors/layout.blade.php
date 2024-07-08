@@ -11,7 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=7" rel="stylesheet" />
+        {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css?v=7" rel="stylesheet" /> --}}
+        <link id="pagestyle" href="{{ asset('css/app.css?v=7') }}" rel="stylesheet" />
     </head>
     <body>
         <div class="flex-center position-ref full-height">

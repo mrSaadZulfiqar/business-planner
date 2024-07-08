@@ -10,12 +10,16 @@
                         <div class="col-auto">
                             <div class="avatar avatar-xxl position-relative">
                                 @if(empty($skit_user['photo']))
-                                    <img src="{{PUBLIC_DIR}}/img/user-avatar-placeholder.png"
-                                         class="w-100 border-radius-lg shadow-sm">
+                                    {{-- <img src="{{PUBLIC_DIR}}/img/user-avatar-placeholder.png"
+                                         class="w-100 border-radius-lg shadow-sm"> --}}
+                                    <img src="{{ asset('img/user-avatar-placeholder.png') }}" class="w-100 border-radius-lg shadow-sm">
+
                                 @else
 
-                                    <img src="{{PUBLIC_DIR}}/uploads/{{$skit_user->photo}}" alt=""
-                                         class="w-100 border-radius-lg shadow-sm">
+                                    {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$skit_user->photo}}" alt=""
+                                         class="w-100 border-radius-lg shadow-sm"> --}}
+                                    <img src="{{ asset('uploads/' . $skit_user->photo) }}" alt="" class="w-100 border-radius-lg shadow-sm">
+
                                 @endif
 
                             </div>

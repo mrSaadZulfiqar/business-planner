@@ -53,8 +53,10 @@
                                                     @if(!empty($users[$member]->photo))
                                                         <a href="javascript:"
                                                            class="avatar avatar-md rounded-circle border border-secondary">
-                                                            <img class="p-1"
-                                                                 src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}">
+                                                            {{-- <img class="p-1"
+                                                                 src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}"> --}}
+                                                            <img class="p-1" src="{{ asset('uploads/' . $users[$member]->photo) }}">
+
                                                         </a>
                                                     @else
                                                         <div
@@ -125,8 +127,10 @@
                                     <div class=" me-3 ">
                                         @if(!empty($users[$reply->admin_id]->photo))
                                             <a href="javascript:" class=" avatar avatar-md rounded-circle ">
-                                                <img alt="" class="avatar rounded-circle flex-shrink-0"
-                                                     src="{{PUBLIC_DIR}}/uploads/{{$users[$reply->admin_id]->photo}}">
+                                                {{-- <img alt="" class="avatar rounded-circle flex-shrink-0"
+                                                     src="{{PUBLIC_DIR}}/uploads/{{$users[$reply->admin_id]->photo}}"> --}}
+                                                <img alt="" class="avatar rounded-circle flex-shrink-0" src="{{ asset('uploads/' . $users[$reply->admin_id]->photo) }}">
+
                                             </a>
                                         @else
                                             <div

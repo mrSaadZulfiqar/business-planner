@@ -34,7 +34,8 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     @if(!empty($blog->cover_photo))
-                        <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="card-img-top">
+                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}}" class="card-img-top"> --}}
+                        <img src="{{ asset('uploads/' . $blog->cover_photo) }}" class="card-img-top">
                     @endif
 
                     <div class="card-body ">

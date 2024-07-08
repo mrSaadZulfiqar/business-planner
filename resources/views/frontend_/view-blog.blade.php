@@ -2,7 +2,8 @@
 @section('title',$blog->title)
 @section('content')
 
-    <div class="page-header min-vh-80 py-9" style="background-image: url({{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}});">
+    {{-- <div class="page-header min-vh-80 py-9" style="background-image: url({{PUBLIC_DIR}}/uploads/{{$blog->cover_photo}});"> --}}
+    <div class="page-header min-vh-80 py-9" style="background-image: url({{ asset('uploads/' . $blog->cover_photo) }});">
         <span class="mask bg-gradient-dark opacity-4"></span>
         <div class="container">
             <div class="row justify-content-center">
@@ -23,7 +24,8 @@
 
     <div class=" d-flex ">
         @if(!empty($users[$blog->admin_id]->photo))
-            <img alt="" class=" avatar rounded-circle shadow " src="{{PUBLIC_DIR}}/uploads/{{$users[$blog->admin_id]->photo}}">
+            {{-- <img alt="" class=" avatar rounded-circle shadow " src="{{PUBLIC_DIR}}/uploads/{{$users[$blog->admin_id]->photo}}"> --}}
+            <img alt="" class="avatar rounded-circle shadow" src="{{ asset('uploads/' . $users[$blog->admin_id]->photo) }}">
         @else
             <div class="avatar rounded-circle bg-purple-light  border-radius-md p-2">
                 <h6 class="text-purple mt-1">{{$users[$blog->admin_id]->first_name[0]}}{{$users[$blog->admin_id]->last_name[0]}}</h6>

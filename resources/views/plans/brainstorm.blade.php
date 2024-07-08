@@ -1,7 +1,8 @@
 @extends('layouts.primary')
 
 @section('head')
-    <link href="{{PUBLIC_DIR}}/lib/canvas/css/canvas.css?v=9" rel="stylesheet"/>
+    {{-- <link href="{{PUBLIC_DIR}}/lib/canvas/css/canvas.css?v=9" rel="stylesheet"/> --}}
+    <link href="{{ asset('lib/canvas/css/canvas.css?v=9') }}" rel="stylesheet"/>
 @endsection
 
 @section('content')
@@ -48,11 +49,13 @@
 @endsection
 
 @section('script')
-    <script src="{{PUBLIC_DIR}}/lib/canvas/js/canvas.min.js?v=50"></script>
+    {{-- <script src="{{PUBLIC_DIR}}/lib/canvas/js/canvas.min.js?v=50"></script> --}}
+    <script src="{{ asset('lib/canvas/js/canvas.min.js?v=50') }}"></script>
     <script>
         $(function () {
             const lc = LC.init(document.getElementsByClassName('my-drawing')[0],{
-                imageURLPrefix: '{{PUBLIC_DIR}}/lib/canvas/img',
+                // imageURLPrefix: '{{PUBLIC_DIR}}/lib/canvas/img',
+                imageURLPrefix: '{{ asset('lib/canvas/img') }}'
                 imageSize: {
                     width: 1100, height: null,
                 },

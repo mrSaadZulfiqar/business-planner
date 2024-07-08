@@ -61,8 +61,10 @@
                                                 <a href="javascript:" class="avatar avatar-sm rounded-circle"
                                                    data-bs-toggle="tooltip" data-bs-placement="bottom"
                                                    title="{{$users[$member]->first_name}}">
-                                                    <img src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}"
-                                                         alt="team1">
+                                                    {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}"
+                                                         alt="team1"> --}}
+                                                    <img src="{{ asset('uploads/' . $users[$member]->photo) }}" alt="team1">
+
                                                 </a>
 
                                             @else

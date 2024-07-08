@@ -212,8 +212,11 @@
                                                     </div>
                                                 @else
 
-                                                    <img src="{{PUBLIC_DIR}}/uploads/{{$skit_user->photo}}" alt=""
+                                                    {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$skit_user->photo}}" alt=""
+                                                         class="avatar avatar-md"> --}}
+                                                    <img src="{{ asset('uploads/' . $skit_user->photo) }}" alt="" 
                                                          class="avatar avatar-md">
+
                                                 @endif
                                             </div>
                                             <div class="d-flex flex-column justify-content-center px-3">

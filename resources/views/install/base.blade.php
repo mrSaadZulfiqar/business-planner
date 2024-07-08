@@ -6,7 +6,8 @@
     <title>
         {{__('CloudOnex Installer')}}
     </title>
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 </head>
 <body class="g-sidenav-show   bg-white">
 <section>

@@ -76,7 +76,7 @@
     <header>
         <div class="page-header min-vh-100">
             <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
-                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 border-radius-lg border-top-start-radius-0 ms-n6"
+                <!-- <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 border-radius-lg border-top-start-radius-0 ms-n6"
 
                      @if (!empty($landingpage->background_image))
 
@@ -86,7 +86,14 @@
 
                      @endif
 
+                > -->
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 border-radius-lg border-top-start-radius-0 ms-n6"
 
+                @if(!empty($landingpage->background_image))
+                    style="background-image: url('{{ asset('uploads/' . $landingpage->background_image) }}')"
+                @else
+                    style="background-image: url('{{ asset('img/image.png') }}')"
+                @endif
 
                 ></div>
             </div>
@@ -618,14 +625,22 @@
 
 
     <section class="bg-gradient-dark">
-        <div class="page-header min-vh-100"
+        <!-- <div class="page-header min-vh-100"
              @if (!empty($landingpage->feature1_image))
              style="background-image: url('{{PUBLIC_DIR}}/uploads/{{$landingpage->feature1_image}}')"
-        @else
+            @else
 
              style="background-image: url('{{PUBLIC_DIR}}/img/image.png')"
                     class="w-100 border-radius-lg shadow-sm">
-             @endif >
+             @endif > -->
+
+        <div class="page-header min-vh-100"
+            @if (!empty($landingpage->feature1_image))
+                style="background-image: url('{{ asset('uploads/' . $landingpage->feature1_image) }}')"
+            @else
+                style="background-image: url('{{ asset('img/image.png') }}')"
+                class="w-100 border-radius-lg shadow-sm">
+            @endif>
 
             <span class="mask bg-dark opacity-8"></span>
             <div class="container">
@@ -929,17 +944,23 @@
 
 
                         <div class="d-block blur-shadow-image">
-                            @if (!empty($landingpage->story1_image))
+                            <!-- @if (!empty($landingpage->story1_image))
                                 <img src="{{PUBLIC_DIR}}/uploads/{{$landingpage->story1_image}}"  class="img-fluid shadow rounded-3">
 
                                 @else  <img src="{{PUBLIC_DIR}}/img/image.png"
                                             class="w-100 border-radius-lg shadow-sm">
+                            @endif -->
+
+                            @if (!empty($landingpage->story1_image))
+                                <img src="{{ asset('uploads/' . $landingpage->story1_image) }}" class="img-fluid shadow rounded-3">
+                            @else
+                                <img src="{{ asset('img/image.png') }}" class="w-100 border-radius-lg shadow-sm">
                             @endif
 
                         </div>
 
                         <div class="colored-shadow"
-                             @if (!empty($landingpage))
+                        @if (!empty($landingpage))
                              style="background-image: url('{{PUBLIC_DIR}}/uploads/{{$landingpage->story1_image}}');"
                             @endif
 
@@ -1032,11 +1053,11 @@
 
 
                         <div class="d-block blur-shadow-image">
-                            @if (!empty($landingpage->story2_image))
-                                <img src="{{PUBLIC_DIR}}/uploads/{{$landingpage->story2_image}}" alt="" class="img-fluid shadow rounded-3">
-                            @else  <img src="{{PUBLIC_DIR}}/img/image.png"
-                                        class="w-100 border-radius-lg shadow-sm">
-                            @endif
+                        @if (!empty($landingpage->story2_image))
+                            <img src="{{ asset('uploads/' . $landingpage->story2_image) }}" alt="" class="img-fluid shadow rounded-3">
+                        @else
+                            <img src="{{ asset('img/image.png') }}" class="w-100 border-radius-lg shadow-sm">
+                        @endif
 
                         </div>
                         <div class="colored-shadow" style="background-image: url('{{PUBLIC_DIR}}/img/feature.jpg');"></div>

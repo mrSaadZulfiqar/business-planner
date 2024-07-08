@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/>
+    {{-- <link id="pagestyle" href="{{PUBLIC_DIR}}/css/app.css" rel="stylesheet"/> --}}
+    <link id="pagestyle" href="{{ asset('css/app.css') }}" rel="stylesheet"/>
 	<style>
 		.card-content{
 			padding:20px;

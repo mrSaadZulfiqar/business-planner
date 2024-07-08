@@ -31,7 +31,8 @@
 
                                 <h5 class="text-dark">
                                     @if(!empty($plan->logo))
-                                        <img src="{{PUBLIC_DIR}}/uploads/{{$plan->logo}}" class="w-5">
+                                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$plan->logo}}" class="w-5"> --}}
+                                        <img src="{{ asset('uploads/' . $plan->logo) }}" class="w-5">
                                     @endif
                                     {{$plan->company_name}}
                                 </h5>
@@ -143,8 +144,11 @@
                             <line x1="16" y1="17" x2="8" y2="17"></line>
                             <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
-                        <a href="{{PUBLIC_DIR}}/uploads/{{$plan->file}}" class="fw-bolder">
+                        {{-- <a href="{{PUBLIC_DIR}}/uploads/{{$plan->file}}" class="fw-bolder">
                             {{$plan->file}}
+                        </a> --}}
+                        <a href="{{ asset('uploads/' . $plan->file) }}" class="fw-bolder">
+                            {{ $plan->file }}
                         </a>
 
                     </div>

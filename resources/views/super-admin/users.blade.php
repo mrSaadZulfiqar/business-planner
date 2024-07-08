@@ -42,8 +42,10 @@
                                                         </div>
                                                     @else
 
-                                                        <img src="{{PUBLIC_DIR}}/uploads/{{$workspace_user->photo}}"
-                                                             alt="" class="avatar avatar-md shadow-sm">
+                                                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$workspace_user->photo}}"
+                                                             alt="" class="avatar avatar-md shadow-sm"> --}}
+                                                        <img src="{{ asset('uploads/' . $workspace_user->photo) }}" alt="" class="avatar avatar-md shadow-sm">
+
                                                     @endif
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center px-3">

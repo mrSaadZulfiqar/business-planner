@@ -15,7 +15,8 @@
                 <h2 class="mt-6 ms-3">{{$note->title}}</h2>
                 @if(!empty($users[$note->admin_id]->photo))
                     <a href="javascript:" class=" mt-4 avatar rounded-circle border border-secondary">
-                        <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$note->admin_id]->photo}}">
+                        {{-- <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$note->admin_id]->photo}}"> --}}
+                        <img alt="" class="p-1" src="{{ asset('uploads/' . $users[$note->admin_id]->photo) }}">
                     </a>
                 @else
                     @if(!empty($users[$note->admin_id]))
@@ -43,7 +44,8 @@
                 <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                     <a href="javascript:" class="d-block">
                         @if(!empty($note->cover_photo))
-                            <img src="{{PUBLIC_DIR}}/uploads/{{$note->cover_photo}}" class="img-fluid border-radius-lg">
+                            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$note->cover_photo}}" class="img-fluid border-radius-lg"> --}}
+                            <img src="{{ asset('uploads/' . $note->cover_photo) }}" class="img-fluid border-radius-lg">
 
                         @endif
 

@@ -41,7 +41,8 @@
                         </div>
 
                         @if(!empty($plan->logo))
-                            <img src="{{PUBLIC_DIR}}/uploads/{{$plan->logo}}" class="w-30">
+                            {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$plan->logo}}" class="w-30"> --}}
+                            <img src="{{ asset('uploads/' . $plan->logo) }}" class="w-30">
                         @endif
 
 

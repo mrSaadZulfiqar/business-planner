@@ -63,8 +63,9 @@
                                                     @if(!empty($users[$member]->photo))
                                                         <a href="javascript:"
                                                            class="avatar avatar-md rounded-circle border border-secondary">
-                                                            <img alt="" class="p-1"
-                                                                 src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}">
+                                                            {{-- <img alt="" class="p-1"
+                                                                 src="{{PUBLIC_DIR}}/uploads/{{$users[$member]->photo}}"> --}}
+                                                                 <img alt="" class="p-1" src="{{ asset('uploads/' . $users[$member]->photo) }}">
                                                         </a>
                                                     @else
                                                         <div

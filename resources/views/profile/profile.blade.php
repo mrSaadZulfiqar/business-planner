@@ -1,8 +1,11 @@
 @extends('layouts.'.($layout ?? 'primary'))
 @section('content')
 
-    <div class="page-header card min-height-250 "@if(!empty($user->cover_photo))
+    {{-- <div class="page-header card min-height-250 "@if(!empty($user->cover_photo))
          style="background-image: url('{{PUBLIC_DIR}}/uploads/{{$user->cover_photo}}'); background-position-y: 50%;"
+        @endif> --}}
+    <div class="page-header card min-height-250" @if(!empty($user->cover_photo))
+        style="background-image: url('{{ asset('uploads/' . $user->cover_photo) }}'); background-position-y: 50%;"
         @endif>
         <span class="mask bg-gradient-dark opacity-6"></span>
     </div>
@@ -11,10 +14,12 @@
             <div class="col-auto">
                 <div class="avatar rounded-circle avatar-xxl position-relative border-avatar">
                     @if(empty($user->photo))
-                        <img src="{{PUBLIC_DIR}}/img/user-avatar-placeholder.png"
-                             class="w-100 border-radius-lg shadow-sm">
+                        {{-- <img src="{{PUBLIC_DIR}}/img/user-avatar-placeholder.png"
+                             class="w-100 border-radius-lg shadow-sm"> --}}
+                        <img src="{{ asset('img/user-avatar-placeholder.png') }}" class="w-100 border-radius-lg shadow-sm">
                     @else
-                        <img src="{{PUBLIC_DIR}}/uploads/{{$user->photo}}" class="w-100 border-radius-lg shadow-sm">
+                        {{-- <img src="{{PUBLIC_DIR}}/uploads/{{$user->photo}}" class="w-100 border-radius-lg shadow-sm"> --}}
+                        <img src="{{ asset('uploads/' . $user->photo) }}" class="w-100 border-radius-lg shadow-sm">
                     @endif
 
                 </div>

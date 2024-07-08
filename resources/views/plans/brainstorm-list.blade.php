@@ -20,10 +20,13 @@
                     <div class="card">
                         <div class="overflow-hidden position-relative border-radius-lg bg-cover p-3"
 
-                             @if(file_exists(public_path() . '/uploads/brainstorming/'.$canvas->uuid.'.png'))
+                             {{-- @if(file_exists(public_path() . '/uploads/brainstorming/'.$canvas->uuid.'.png'))
                              style="background-image: url('{{PUBLIC_DIR}}/uploads/brainstorming/{{$canvas->uuid}}.png')"
- @endif
- >
+                            @endif --}}
+                            @if(file_exists(public_path() . '/uploads/brainstorming/'.$canvas->uuid.'.png'))
+                                style="background-image: url('{{ asset('uploads/brainstorming/' . $canvas->uuid . '.png') }}')"
+                            @endif
+                            >
                             <span class="mask bg-purple-light opacity-6"></span>
                             <div class="card-body position-relative ">
 
@@ -42,7 +45,8 @@
                     <div class="d-flex align-items-center mt-1">
                         @if(!empty($users[$canvas->admin_id]->photo))
                             <a href="javascript:" class=" avatar avatar-sm rounded-circle ">
-                                <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$canvas->admin_id]->photo}}">
+                                {{-- <img alt="" class="p-1" src="{{PUBLIC_DIR}}/uploads/{{$users[$canvas->admin_id]->photo}}"> --}}
+                                <img alt="" class="p-1" src="{{ asset('uploads/' . $users[$canvas->admin_id]->photo) }}">
                             </a>
                         @else
                             <div class="avatar avatar-sm  rounded-circle bg-warning-light  p-2">
