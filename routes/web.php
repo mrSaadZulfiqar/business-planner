@@ -9,7 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DownloadController;
-
+use App\Http\Controllers\FinancialForecastingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\MckinseyController;
@@ -129,6 +129,10 @@ Route::middleware('trial.check')->group(function () {
     
     Route::get("/dashboard", [DashboardController::class, "dashboard"]);
     
+    Route::get('/financial-forecasting', [FinancialForecastingController::class, 'index'])->name('financial-forecasting');
+    Route::get('/add-financial-forecast', [FinancialForecastingController::class, 'create'])->name('add-financial-forecast');
+    Route::post('/save-financial-forecast', [FinancialForecastingController::class, 'store'])->name('save-financial-forecast');
+
     Route::get("/add-investor", [ContactController::class, "addInvestor"]);
     Route::get("/investors", [ContactController::class, "investorList"]);
     Route::get("/view-investor", [ContactController::class, "investorView"]);

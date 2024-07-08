@@ -86,6 +86,92 @@
 
 
             </li>
+
+            <li class="nav-item mt-3 mb-2">
+                <h6 class="ps-4 ms-2 text-uppercase text-muted text-xs opacity-6">{{__('Financial Planner')}} </h6>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'financial-forecasting') active @endif" href="/financial-forecasting">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Financial Forecasting')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'scenario-modeling') active @endif" href="/scenario-modeling">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart">
+                        <path d="M21.21 15.89A10 10 0 1 0 8.1 2.8"></path>
+                        <path d="M22 12A10 10 0 0 1 12 22"></path>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Scenario Modeling')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'sensitivity-analysis') active @endif" href="/sensitivity-analysis">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders">
+                        <line x1="4" y1="21" x2="4" y2="14"></line>
+                        <line x1="4" y1="10" x2="4" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="3"></line>
+                        <line x1="20" y1="21" x2="20" y2="16"></line>
+                        <line x1="20" y1="12" x2="20" y2="3"></line>
+                        <line x1="1" y1="14" x2="7" y2="14"></line>
+                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                        <line x1="17" y1="16" x2="23" y2="16"></line>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Sensitivity Analysis')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'benchmarking') active @endif" href="/benchmarking">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-left">
+                        <line x1="17" y1="10" x2="3" y2="10"></line>
+                        <line x1="21" y1="6" x2="3" y2="6"></line>
+                        <line x1="21" y1="14" x2="3" y2="14"></line>
+                        <line x1="17" y1="18" x2="3" y2="18"></line>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Benchmarking')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'decision-support') active @endif" href="/decision-support">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square">
+                        <polyline points="9 11 12 14 22 4"></polyline>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Decision Support')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'risk-assessment') active @endif" href="/risk-assessment">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
+                        <path d="M12 22s8-4 8-10V5L12 2 4 5v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Risk Assessment')}}</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link @if(($selected_navigation ?? '') === 'risk-analysis') active @endif" href="/risk-analysis">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    <span class="nav-link-text ms-3">{{__('Risk Analysis')}}</span>
+                </a>
+            </li>
+            <!-- End of Financial Planner Section -->
+            
+            <!-- Existing Product Planning Section -->
+
             <li class="nav-item mt-3 mb-2">
                 <h6 class="ps-4 ms-2 text-uppercase text-muted text-xs opacity-6">{{__('Product Planning')}} </h6>
             </li>

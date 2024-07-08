@@ -19,7 +19,7 @@
                             @endif
                             <div class="card card-body p-3  js-active" data-animation="FadeIn">
                                 <h5 class="font-weight-bolder mb-0">
-                                    {{__('Add New Investor')}}
+                                    {{__('Add New Investor1')}}
 
                                 </h5>
 
