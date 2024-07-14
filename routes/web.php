@@ -9,7 +9,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DownloadController;
-use App\Http\Controllers\FinancialForecastingController;
+use App\Http\Controllers\FinancialPlanner\FinancialForecastingController;
+use App\Http\Controllers\FinancialPlanner\ScenarioModelingController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\MckinseyController;
@@ -132,6 +133,10 @@ Route::middleware('trial.check')->group(function () {
     Route::get('/financial-forecasting', [FinancialForecastingController::class, 'index'])->name('financial-forecasting');
     Route::get('/add-financial-forecast', [FinancialForecastingController::class, 'create'])->name('add-financial-forecast');
     Route::post('/save-financial-forecast', [FinancialForecastingController::class, 'store'])->name('save-financial-forecast');
+
+    Route::get('/scenario-modeling', [ScenarioModelingController::class, 'index'])->name('scenario-modeling');
+    Route::get('/add-scenario-modeling', [ScenarioModelingController::class, 'create'])->name('add-scenario-modeling');
+    Route::post('/save-scenario-modeling', [ScenarioModelingController::class, 'store'])->name('save-scenario-modeling');
 
     Route::get("/add-investor", [ContactController::class, "addInvestor"]);
     Route::get("/investors", [ContactController::class, "investorList"]);
