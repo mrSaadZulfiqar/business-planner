@@ -9,8 +9,13 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeleteController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\DownloadController;
+use App\Http\Controllers\FinancialPlanner\BenchmarkingController;
+use App\Http\Controllers\FinancialPlanner\DecisionSupportController;
 use App\Http\Controllers\FinancialPlanner\FinancialForecastingController;
+use App\Http\Controllers\FinancialPlanner\RiskAnalysisController;
+use App\Http\Controllers\FinancialPlanner\RiskAssessmentController;
 use App\Http\Controllers\FinancialPlanner\ScenarioModelingController;
+use App\Http\Controllers\FinancialPlanner\SensitivityAnalysisController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MarketingController;
 use App\Http\Controllers\MckinseyController;
@@ -137,6 +142,27 @@ Route::middleware('trial.check')->group(function () {
     Route::get('/scenario-modeling', [ScenarioModelingController::class, 'index'])->name('scenario-modeling');
     Route::get('/add-scenario-modeling', [ScenarioModelingController::class, 'create'])->name('add-scenario-modeling');
     Route::post('/save-scenario-modeling', [ScenarioModelingController::class, 'store'])->name('save-scenario-modeling');
+
+    Route::get('/sensitivity-analysis', [SensitivityAnalysisController::class, 'index'])->name('sensitivity-analysis');
+    Route::get('/add-sensitivity-analysis', [SensitivityAnalysisController::class, 'create'])->name('add-sensitivity-analysis');
+    Route::post('/save-sensitivity-analysis', [SensitivityAnalysisController::class, 'store'])->name('save-sensitivity-analysis');
+
+    Route::get('/benchmarking', [BenchmarkingController::class, 'index'])->name('benchmarking');
+    Route::get('/add-benchmarking', [BenchmarkingController::class, 'create'])->name('add-benchmarking');
+    Route::post('/save-benchmarking', [BenchmarkingController::class, 'store'])->name('save-benchmarking');
+
+    Route::get('/decision-support', [DecisionSupportController::class, 'index'])->name('decision-support');
+    Route::get('/add-decision-support', [DecisionSupportController::class, 'create'])->name('add-decision-support');
+    Route::post('/save-decision-support', [DecisionSupportController::class, 'store'])->name('save-decision-support');
+
+    Route::get('/risk-assessment', [RiskAssessmentController::class, 'index'])->name('risk-assessment');
+    Route::get('/add-risk-assessment', [RiskAssessmentController::class, 'create'])->name('add-risk-assessment');
+    Route::post('/save-risk-assessment', [RiskAssessmentController::class, 'store'])->name('save-risk-assessment');
+
+    Route::get('/risk-analysis', [RiskAnalysisController::class, 'index'])->name('risk-analysis');
+    Route::get('/add-risk-analysis', [RiskAnalysisController::class, 'create'])->name('add-risk-analysis');
+    Route::post('/save-risk-analysis', [RiskAnalysisController::class, 'store'])->name('save-risk-analysis');
+
 
     Route::get("/add-investor", [ContactController::class, "addInvestor"]);
     Route::get("/investors", [ContactController::class, "investorList"]);
